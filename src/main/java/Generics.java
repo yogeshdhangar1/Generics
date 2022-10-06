@@ -1,24 +1,25 @@
 public class Generics {
-    public static void maxValue(int a,int b,int c){
-        Integer n1 = a;
-        Integer n2 = b;
-        Integer n3 = c;
-        Integer max = n1;
-        if(n2.compareTo(max)>0){
-            max = n2;
+    public static void MaxFloatValue(Float a,Float b,Float c){
+        Float n1=a;
+        Float n2=b;
+        Float n3=c;
+        Float max=n1;
+        if(n2.compareTo(max)>0) {
+
+            max=n2;
         }
-        if(n2.compareTo(max)>0){
-            max = n3;
+        if(n3.compareTo(max)>0) {
+            max=n3;
         }
-        System.out.println("Maximum Number is :"+max);
+        System.out.println("Maximum number is "+max);
     }
 
     public static void main(String[] args) {
-        System.out.println("TC 1.1 Keeping Max Value at 1");
-        maxValue(3,2,1);
+        System.out.println("TC 1.1 Keeping max value at 1");
+        MaxFloatValue(3.10f,2.20f,1.10f);
         System.out.println("TC 1.2 keeping max value at 2");
-        maxValue(2,3,1);
+        MaxFloatValue(2.20f,3.10f,1.10f);
         System.out.println("TC 1.3 keeping max value at 3");
-        maxValue(1,2,3);
+        MaxFloatValue(1.10f,2.20f,3.10f);
     }
 }
