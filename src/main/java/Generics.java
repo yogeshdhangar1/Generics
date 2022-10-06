@@ -1,23 +1,30 @@
 public class Generics {
-    public static void MaxStringValue(String a,String b,String c){
-        String st1=a;
-        String st2=b;
-        String st3=c;
-        String max=st1;
-        if(st2.compareTo(max)>0) {
-            max=st2;
+    public static < T extends Comparable <T> > void MaxValue(T[] inputArray) {
+
+        int n = inputArray.length;
+        for (int i = 0; i < n-1; i++){
+            for (int j = 0; j < n-i-1; j++){
+                if (inputArray[j].compareTo(inputArray[j+1]) > 0) {
+                    T temp = inputArray[j];
+                    inputArray[j] = inputArray[j+1];
+                    inputArray[j+1] = temp;
+                }
+            }
         }
-        if(st3.compareTo(max)>0) {
-            max=st3;
-        }
-        System.out.println("Maximum number is "+max);
+        System.out.println(inputArray[n-1]);
     }
     public static void main(String[] args) {
-        System.out.println("TC 1.1 Keeping max string at 1");
-        MaxStringValue("Apple","Peach","Banana");
-        System.out.println("TC 1.2 keeping max string at 2");
-        MaxStringValue("Peach","Apple","Banana");
-        System.out.println("TC 1.3 keeping max string at 3");
-        MaxStringValue("Banana","Peach","Apple");
+        Integer [] intArray = {4,2,5,3,1};
+        Double[] doubleArray = { 11.2, 12.2, 13.3, 14.4, 15.5 };
+        String [] stringArray = {"Apple","Peach","Orange","Banana","Kiwi"};
+
+        System.out.println( "Max Integer Array" );
+        MaxValue( intArray );
+
+        System.out.println( "Max Double Array" );
+        MaxValue( doubleArray );
+
+        System.out.println( "Max String Array" );
+        MaxValue( stringArray );
     }
 }
