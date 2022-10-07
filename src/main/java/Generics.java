@@ -7,7 +7,7 @@ public class Generics {
         if(n2.compareTo(max)>0){
             max = n2;
         }
-        if(n2.compareTo(max)>0){
+        if(n3.compareTo(max)>0){
             max = n3;
         }
         System.out.println("Maximum Number is :"+max);
